@@ -1,0 +1,42 @@
+[mcp_servers.tableau_operator]
+command = "python"
+args = ["-m", "tableau_operator.mcp_server"]
+cwd = ".."
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+enabled = true
+required = false
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.tableau_operator.tools.validate_connection]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.discover_site]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.query_tableau_data]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.plan_bi_spec]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.preview_bi_spec]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.apply_bi_spec]
+approval_mode = "prompt"
+
+[mcp_servers.tableau_operator.tools.open_authoring_session]
+approval_mode = "prompt"
+
+[mcp_servers.tableau_operator.tools.snapshot_tableau_ui]
+approval_mode = "auto"
+
+[mcp_servers.tableau_operator.tools.click_tableau_ui]
+approval_mode = "prompt"
+
+[mcp_servers.tableau_operator.tools.run_tableau_ui_steps]
+approval_mode = "prompt"
+
+[mcp_servers.tableau_operator.tools.capture_state]
+approval_mode = "auto"

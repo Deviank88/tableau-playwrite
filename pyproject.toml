@@ -1,0 +1,26 @@
+[project]
+name = "tableau-mcp-operator"
+version = "0.1.0"
+description = "MCP server for declarative Tableau Cloud BI operations using REST, Metadata, Hyper and Playwright."
+requires-python = ">=3.12"
+dependencies = [
+  "mcp>=1.2.0",
+  "httpx>=0.27.0",
+  "playwright>=1.45.0",
+  "tableauhyperapi>=0.0.20500",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+tableau-mcp-operator = "tableau_operator.mcp_server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["tableau_operator*"]
+exclude = ["wiki*", "docs*", "tests*", "scripts*"]
